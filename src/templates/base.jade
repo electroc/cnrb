@@ -1,17 +1,18 @@
 doctype html
-html
+html(lang="#{locale[0]}")
     head
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        script
-            include:uglify ../assets-dev/js/load-webfonts.js
-            :uglify
-                loadWebfonts(
-                    '/assets/css/webfonts-woff.css',
-                    '/assets/css/webfonts-woff2.css',
-                    '#{hash(fileContents("web/assets/css/webfonts-woff.css"))}',
-                    '#{hash(fileContents("web/assets/css/webfonts-woff2.css"))}'
-                );
+        block webfonts
+            script
+                include:uglify ../assets-dev/js/load-webfonts.js
+                :uglify
+                    loadWebfonts(
+                        '/assets/css/webfonts-woff.css',
+                        '/assets/css/webfonts-woff2.css',
+                        '#{fn.hash(fn.fileContents("web/assets/css/webfonts-woff.css"))}',
+                        '#{fn.hash(fn.fileContents("web/assets/css/webfonts-woff2.css"))}'
+                    );
         if title
             title #{title} | #{siteTitle}
         else
@@ -19,9 +20,14 @@ html
         meta(name="description", content=siteDescription)
         block styles
             link(href="/assets/css/main.css", rel="stylesheet", type="text/css")
+        link(href="/favicon.ico", rel="icon")
+        include partials/opengraph.jade
+
     body
         block content
             | !{contents}
-        block scripts
+
+        block jquery
             include partials/jquery.jade
+        block scripts
             script(src="/assets/js/main.js")

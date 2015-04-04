@@ -8,19 +8,19 @@ font-family = {
     monospace: MesloWeb\, Meslo\, Menlo\, Consolas\, Monaco\, Lucida Console\, Liberation Mono\, DejaVu Sans Mono\, Bitstream Vera Sans Mono\, Courier New\, monospace\, serif
 }
 
+colors= {
+    foreground: #212325,
+    background: #f6f8fa,
+    link: #1d1075
+}
+
+
 line-height = {
-    normal: (20 / 14)
+    normal: (20 / 14),
     small: (20 / 14 * .85),
-    large: (20 / 14 * 1.25)
+    large: (20 / 14 * 1.25),
     headline: 1.2
 }
-
-spacing = {
-    outer: 16px,
-    inner: 20px,
-    flow: .675em
-}
-
 
 /**
  * Mediaquery breakpoints
@@ -68,6 +68,6 @@ for key, value in breakpoints
 grid-config = {
     placeholders-only: true,
     column-count: 24,
-    gutter-width: spacing.outer,
+    gutter-width: 20px,
     breakpoints: grid-breakpoints
 }

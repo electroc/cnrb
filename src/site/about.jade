@@ -1,0 +1,32 @@
+---
+template: base.jade
+---
+
+header.site-header.page-section.page-section--header
+
+    h1.site-title #{cnrb.name}
+
+    figure.avatar
+        img.avatar__img(src="#{fn.gravatar(600)}" alt="#{cnrb.name}" title="#{cnrb.name}")
+
+    p.msg-welcome.
+        Hallo, lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+section.page-section.page-section--info
+
+
+section.page-section.page-section--contact
+
+    address.contact-address
+        | #{cnrb.name}<br>
+        | !{cnrb.address.replace(/[\n\r]+/, '<br>') + '<br>'}
+        | #{cnrb.zip} #{cnrb.city}
+
+    ul.contact-list
+        li.contact-list__item
+            a.contact-list__item-link.is-mail(href="mailto:#{cnrb.email}" title="E-Mail an #{cnrb.name}") #{cnrb.email}
+        li.contact-list__item
+            a.contact-list__item-link.is-phone(href="tel:#{cnrb.phone}") #{cnrb.phone_formatted}
+
+footer.site-footer
+    a.link-home(href="#{siteUrl}", rel="bookmark") electroc.de
