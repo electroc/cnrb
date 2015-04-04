@@ -230,6 +230,17 @@ module.exports = (function(config) {
         }
     };
 
+    // rsync config
+    config.rsync = {
+        root: config.paths.web,
+        recursive: true,
+        clean: true,
+        hostname: 'libra.uberspace.de',
+        username: 'electroc',
+        destination: '/var/www/virtual/electroc/electroc.de',
+        progress: true
+    };
+
     /* = Gulp module options */
 
 

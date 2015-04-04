@@ -380,6 +380,30 @@ gulp.task('serve', function() {
 
 /* = Server Task */
 
+
+/**
+ * + Deploy and Sync Tasks
+ * =====================================================================
+ */
+
+gulp.task('deploy', function(done) {
+    params.environment = 'production';
+    runSequence(
+        'build',
+        'rsync',
+        done
+    );
+});
+
+gulp.task('rsync', function() {
+    return gulp
+        .src(config.paths.web)
+        .pipe(g.rsync(config.rsync));
+});
+
+/* = Deploy and Sync Tasks */
+
+
 /**
  * + Common tasks
  * =====================================================================
