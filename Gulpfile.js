@@ -371,13 +371,12 @@ gulp.task('watch', function() {
             cwd: path.join(config.paths.assetsDev, 'js'),
             start: 'build:js'
         },
-        jade: {
+        site: {
             glob: [
-                'html/**/*.jade',
-                'templates/**/*.jade'
+                '**/*.jade'
             ],
-            cwd: config.paths.src,
-            start: 'build:html'
+            cwd: config.paths.site,
+            start: 'build:site'
         }
     }
 
