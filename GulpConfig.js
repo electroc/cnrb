@@ -175,6 +175,43 @@ module.exports = (function(config) {
         space: 2
     };
 
+    // watch task defintions
+    config.watchTasks = {
+        stylus: {
+            glob: '**/*.styl',
+            cwd: path.join(config.paths.assetsDev, 'stylus'),
+            start: 'build:css'
+        },
+        js: {
+            glob: '**/*.js',
+            cwd: path.join(config.paths.assetsDev, 'js'),
+            start: 'build:js'
+        },
+        site: {
+            glob: [
+                'site/**/*',
+                'templates/**/*'
+            ],
+            cwd: config.paths.src,
+            start: 'build:site'
+        }
+    };
+
+    // copy task definitions
+    config.copyTasks = {
+        collection: {
+            src: '**/*',
+            cwd: 'collection.stylus/src/stylus/imports',
+            baseCwd: config.paths.node,
+            intoDev: true
+        },
+        jquery: {
+            src: 'jquery.min.*',
+            cwd: 'jquery/dist',
+            baseCwd: config.paths.node
+        }
+    };
+
     /* = Gulp module options */
 
 

@@ -273,25 +273,11 @@ gulp.task('build:site', function(done) {
  * =====================================================================
  */
 
-// copy task definitions
-var copyTasks = {
-        collection: {
-            src: '**/*',
-            cwd: 'collection.stylus/src/stylus/imports',
-            baseCwd: config.paths.node,
-            intoDev: true
-        },
-        jquery: {
-            src: 'jquery.min.*',
-            cwd: 'jquery/dist',
-            baseCwd: config.paths.node
-        }
-    },
-    copySequence = [];
 
 // create copy tasks
-Object.keys(copyTasks).forEach(function(name) {
-    var task = copyTasks[name],
+var copySequence = [];
+Object.keys(config.copyTasks).forEach(function(name) {
+    var task = config.copyTasks[name],
         taskName = 'copy:' + name;
     if (!task.hasOwnProperty('baseCwd')) {
         task.baseCwd = config.paths.bower;
@@ -359,27 +345,6 @@ gulp.task('clean:deps', function(done) {
 
 gulp.task('watch', function() {
 
-    // watch task defintions
-    var watchTasks = {
-        stylus: {
-            glob: '**/*.styl',
-            cwd: path.join(config.paths.assetsDev, 'stylus'),
-            start: 'build:css'
-        },
-        js: {
-            glob: '**/*.js',
-            cwd: path.join(config.paths.assetsDev, 'js'),
-            start: 'build:js'
-        },
-        site: {
-            glob: [
-                '**/*.jade'
-            ],
-            cwd: config.paths.site,
-            start: 'build:site'
-        }
-    }
-
     // show watch info in console
     function logWatchInfo(event) {
         var eventPath = path.relative(config.paths.root, event.path);
@@ -387,8 +352,8 @@ gulp.task('watch', function() {
     }
 
     // create watch tasks
-    Object.keys(watchTasks).forEach(function(key) {
-        var task = watchTasks[key];
+    Object.keys(config.watchTasks).forEach(function(key) {
+        var task = config.watchTasks[key];
         gulp.watch(task.glob, _.merge({ cwd: task.cwd }, config.watch), function(event) {
             logWatchInfo(event);
             gulp.start(task.start);
