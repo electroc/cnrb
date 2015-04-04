@@ -1,7 +1,5 @@
 /**
  * + Gulpfile
- * https://github.com/gulpjs/gulp/blob/master/docs/API.md
- * https://github.com/gulpjs/gulp/tree/master/docs/recipes
  * =====================================================================
  */
 'use strict';
@@ -177,7 +175,7 @@ gulp.task('build:site', function(done) {
     });
 
     // localize moment
-    moment.locale(config.metadata.dateLocale);
+    moment.locale(config.metadata.locale[0]);
 
     // jade options
     var jadeLocals = {
@@ -259,7 +257,9 @@ gulp.task('build:site', function(done) {
 
         // put everything together...
         .build(function(err) {
-            if (err) throw err;
+            if (err) {
+                throw err;
+            }
             done();
         });
 

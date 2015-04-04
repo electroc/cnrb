@@ -13,6 +13,7 @@ module.exports = (function(config) {
     // data
     var cwd   = process.cwd(),
         pkg   = require(cwd + '/package.json');
+        bower = require(cwd + '/bower.json');
 
     /**
      * + Paths
@@ -40,13 +41,30 @@ module.exports = (function(config) {
      * =====================================================================
      */
 
+    // personal data
+    config.cnrb = {
+        name: 'Crishan Böhner',
+        description: 'Schlecht drauf. Mürrisch. Pleite. Drogenabhängig. Aggressiv. Unzuverlässig. Kreativ.',
+        email: 'c@electroc.de',
+        url: 'http://electroc.de/',
+        phone: '+4917631718040',
+        phone_formatted: '+49 176 31718040',
+        address: 'Studio-U\nUrbanstraße 64',
+        zip: '10967',
+        city: 'Berlin',
+        country: {
+            short: 'DE',
+            long: 'Deutschland'
+        }
+    };
+
     // static metadata
     config.metadata = {
-        siteTitle:          'Crishan Böhner',
-        siteDescription:    'Some informative description for search engines',
-        siteEmail:          'nandoo@nandoo.de',
-        baseUrl:            '//nandoo.de/',
-        dateLocale:         'de',
+        siteTitle:          config.cnrb.name,
+        siteUrl:            config.cnrb.url.replace(/^http(s)?\:/i, ''),
+        cnrb:               config.cnrb,
+        siteDescription:    config.cnrb.description,
+        locale:             ['de', 'de_DE'],
         dateFormat:         'Do MMM YYYY',
         dateFormatShort:    'DD.MM.YY',
         dateFormatLong:     'dddd, Do MMMM YYYY'
@@ -55,8 +73,7 @@ module.exports = (function(config) {
     // metadata changes depending on environment
     config.metadata.environments = {
         development: {
-            baseUrl:            '//localhost:8080/',
-            googleAnalytics:    false
+            siteUrl:        '//localhost:8080/',
         }
     };
 
@@ -67,9 +84,10 @@ module.exports = (function(config) {
      * + Functions (available in templates)
      * =====================================================================
      */
+    config.metadata.fn = {};
 
     // get dependency version from package.json or bower.json
-    config.metadata.getDependencyVersion = function(dep, data, dev) {
+    config.metadata.fn.getDependencyVersion = function(dep, data, dev) {
         data = data=='bower' ? bower : pkg;
         dev = dev===undefined ? true : dev;
         data = data[(dev?'devD':'d') + 'ependencies']
@@ -77,12 +95,12 @@ module.exports = (function(config) {
     };
 
     // get the contents of a file
-    config.metadata.fileContents = function(file) {
+    config.metadata.fn.fileContents = function(file) {
         return fs.readFileSync(path.join(config.paths.root, file));
     };
 
     // get the hash of a string
-    config.metadata.hash = function(string, algorithm) {
+    config.metadata.fn.hash = function(string, algorithm) {
         if (!algorithm || crypto.getHashes().indexOf(algorithm)===-1) {
             algorithm = 'md5';
         }
@@ -93,8 +111,8 @@ module.exports = (function(config) {
     };
 
     // get a gravatar url
-    config.metadata.gravatar = function(size, email) {
-        var hash = config.metadata.hash(email || config.metadata.siteEmail, 'md5');
+    config.metadata.fn.gravatar = function(size, email) {
+        var hash = config.metadata.fn.hash(email || config.cnrb.email, 'md5');
         return '//gravatar.com/avatar/' + hash + '.png' + (size ? '?s=' + size : '');
     };
 
@@ -157,7 +175,7 @@ module.exports = (function(config) {
         'important': false,
         'known-properties': false,
         'outline-none': false,
-        'overqualified-elements': false,
+        'unique-headings': false,
         'universal-selector': false
     };
 
