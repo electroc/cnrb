@@ -1,0 +1,90 @@
+
+font-size = 48px
+line-height = (20 / 14)
+height = (font-size * line-height)
+
+html, body
+    height: 100%
+
+body
+    improved-text-rendering()
+    font-family: Roboto Slab, serif
+    line-height: (20 / 14)
+    font-size: font-size
+    font-weight: 700
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+p
+    margin: 0 auto 10% auto
+
+#flipping-text
+    display: inline-block
+    position: relative
+    height: height
+    width: 200px
+    transform: translate(0, ((height - font-size * .84) / 2))
+    perspective: height * 2
+
+    span
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        text-align: center
+        // transition: all 5s linear
+        background: green
+        line-height: line-height
+        transform-style: preserve-3d;
+        // backface-visibility: hidden
+
+@keyframes rotation {
+    0%, 15% {
+        transform: rotateX(0)
+    }
+    25%, 41% {
+        transform: rotateX(-90deg)// translateY((height*.28)) translateZ((height*.42))
+    }
+    58%, 74% {
+        transform: rotateX(-180deg)// translateY(-(height*.28)) translateZ(-(height*.42))
+    }
+    85%, 100% {
+        transform: rotateX(90deg)// translateX(-height) translateY(-(height*.28)) translateZ(-(height*.42))
+    }
+}
+
+front()
+    transform: rotateX(0) translateY(0) translateZ(0)
+
+bottom()
+    transform: rotateX(-90deg) translateY((height*.28)) translateZ((height*.42))
+
+back()
+    transform: rotateX(90deg) translateY(-(height*.28)) translateZ(-(height*.42))
+
+top()
+    transform: rotateX(90deg) translateY(-(height*.28)) translateZ(-(height*.42))
+
+
+.first
+    animation: rotation 4s infinite
+    // .alpha &
+    //     front()
+    // .beta &
+    //     bottom()
+    // .gamma &
+    //     back()
+    // .delta &
+    //     top()
+
+.second
+    transform: rotateX(90deg)
+
+.third
+    transform: rotateX(180deg)
+
+.fourth
+    transform: rotateX(270deg)
+
