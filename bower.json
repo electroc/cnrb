@@ -1,0 +1,14 @@
+{
+  "name": "cnrb",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Crishan Böhner <c@electroc.de>",
+  "keywords": [],
+  "license": "GPL3",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {}
+}

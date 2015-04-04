@@ -1,11 +1,18 @@
 {
-  "name": "crishan-portfolio",
+  "name": "cnrb",
   "version": "0.0.0",
   "description": "",
-  "author": "Crishan Böhner <nandoo@nandoo.de>",
+  "author": "Crishan Böhner <c@electroc.de>",
   "keywords": [],
-  "license": "proprietary",
+  "license": "GPL3",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/electroc/cnrb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/electroc/cnrb/issues"
+  },
   "scripts": {
     "build": "gulp build --environment production",
     "build-dev": "gulp build --environment development",
@@ -14,7 +21,7 @@
   "devDependencies": {
     "auto-plug": "^1.0.1",
     "autoprefixer-core": "^5.1.8",
-    "collection.stylus": "^0.3.0",
+    "collection.stylus": "^0.3.1",
     "css-mqpacker": "^3.1.0",
     "csswring": "^3.0.3",
     "del": "^1.1.1",
