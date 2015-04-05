@@ -16,6 +16,8 @@ a
     &:hover
         text-decoration: underline
 
+.site-header,
+.site-footer,
 main
     padding: (grid-config.gutter-width / 2)
 
@@ -24,31 +26,9 @@ $img-responsive
     max-width: 100%
     height: auto
 
-// .site-header
-
-// .site-title
-
-// .site-footer
-
-.page-section
-    padding: (grid-config.gutter-width / 2)
-
-//     &--contact
 
 .logo
     width: 300px;
-
-    +mq-bp(xsl)
-        width: 420px
-
-    +mq-bp(sm)
-        width: 480px
-
-    +mq-bp(md)
-        width: 540px
-
-    +mq-bp(lg)
-        width: 620px
 
     &::before
         display: block;
@@ -57,6 +37,16 @@ $img-responsive
         padding-bottom: (100% / images.logo.ratio);
         background: images.logo.dataUri center center no-repeat;
         background-size: cover
+
+.logo-text
+    &,
+    &--pseudo::before
+        font-family: font-family.champagne
+        font-weight: normal
+        font-size: 24px
+    &--pseudo::before
+        content: 'electroC'
+        display: inline
 
 .avatar
     border-radius: 50%
@@ -82,6 +72,10 @@ $img-responsive
 
 .avatar__img
     @extends $img-responsive
+
+// .page-section
+
+//     &--contact
 
 // .msg-welcome
 
