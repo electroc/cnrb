@@ -1,34 +1,24 @@
-html
-    background: colors.background
-
-body
-    improved-text-rendering()
+$text-sans
     font-family: font-family.sans-serif
-    line-height: line-height.normal
-    font-size: 16px
-    color: colors.foreground
 
+$text-mono
+    font-family: font-family.monospace
 
-a
-    text-decoration: none
-    color: colors.link
+$text-champagne
+    font-family: font-family.champagne
 
-    &:hover
-        text-decoration: underline
+$logo-text
+    @extends $text-champagne
+    font-weight: normal
 
-.site-header,
-.site-footer,
-main
-    padding: (grid-config.gutter-width / 2)
+$logo-text--pseudo
+    @extends $logo-text
+    content: 'electroC'
+    display: inline
 
-$img-responsive
-    display: block
-    max-width: 100%
-    height: auto
-
-
-.logo
-    width: 300px;
+$logo-img
+    width: 100%
+    max-width: unit(images.logo.size[0], 'px');
 
     &::before
         display: block;
@@ -38,62 +28,137 @@ $img-responsive
         background: images.logo.dataUri center center no-repeat;
         background-size: cover
 
-.logo-text
-    &,
-    &--pseudo::before
-        font-family: font-family.champagne
-        font-weight: normal
-        font-size: 24px
-    &--pseudo::before
-        content: 'electroC'
-        display: inline
+$img-responsive
+    display: block
+    max-width: 100%
+    height: auto
+
+html
+    background: #bada55
+
+body
+    @extends $text-mono
+    improved-text-rendering()
+    padding: (grid-config.gutter-width / 2)
+    max-width: 940px;
+    margin: 0 auto;
+    background: colors.background
+    line-height: line-height.normal
+    color: colors.foreground
+    font-size: 14px
+    +mq-bp(md, min)
+        font-size: 16px
+
+a
+    text-decoration: none
+    color: colors.link
+
+    &:hover
+        text-decoration: underline
+
+.row
+    @extends $row
+    +mq-bp(xsl, min)
+        display: flex
+        align-items: stretch
+
+.site-title,
+.site-avatar
+    @extends $col-xs-24, $col-xsl-12
+    +mq-bp(xsl, min)
+        display: flex
+        justify-content: center
+        flex-direction: column
+
+
+.site-title
+    @extends $text-mono
+    font-size: 16px
+    text-align: center
+    margin: 1em auto 1.5em
+
+    +mq-bp(xsl)
+        font-size: (16px / 3 * 3.5)
+    +mq-bp(sm)
+        font-size: (16px / 3 * 4)
+    +mq-bp(md, min)
+        font-size: (16px / 3 * 5)
+
+    &::before
+        @extends $logo-text--pseudo
+        line-height: 1
+        font-size: 3em;
+        display: block
+        margin: 0 auto .2em auto
+
 
 .avatar
     border-radius: 50%
     overflow: hidden
-    width: 80px
     height: auto
-
+    margin: 0 auto 30px auto
+    width: 100%
+    max-width: 180px
     +mq-bp(xsl)
-        width: 100px
-
+        max-width: 210px
+    +mq-bp(xsl, min)
+        margin-top: 30px
     +mq-bp(sm)
-        width: 120px
-
-    +mq-bp(md)
-        width: 160px
-
-    +mq-bp(lg)
-        width: 200px
-
-    +mq-bp(xl)
-        width: 240px
-
+        max-width: 240px
+    +mq-bp(md, min)
+        max-width: 300px
 
 .avatar__img
     @extends $img-responsive
 
-// .page-section
+$boxed-container
+    margin: (grid-config.gutter-width / 2) auto (grid-config.gutter-width / 2) auto
+    width: 80%
 
-//     &--contact
+    +mq-bp(md, min)
+        width: 66%
 
-// .msg-welcome
+.msg-welcome
+    @extends $boxed-container
+
+.headline
+    @extends $boxed-container
+    font-weight: 700
+    text-transform: uppercase
+
+    &::before
+        content: '#'
+        display: inline-block
+        margin-right: .45em
 
 // .project-list
 
-// .project
+.project
+    @extends $boxed-container
+    border: 1px solid #808080
+    padding: grid-config.gutter-width
 
-// .project__title
+    + .project
+        margin: 30px auto 0 auto
+
+
+$content-spacing
+    margin-bottom: .23em
+
+.project__title
 
 // .project__images
 
-// .project-image
+.project-image
+    @extends $content-spacing
 
 // .project-image__figure
 
-// .project-image__img
+.project-image__link
+    display: inline-block
 
-// .project-image__caption
+.project-image__img
+    @extends $img-responsive
 
 // .project-links
 
@@ -113,3 +178,6 @@ $img-responsive
 
 //     &.is_phone
 
+.link-home
+    @extends $logo-text
+    font-size: 24px
