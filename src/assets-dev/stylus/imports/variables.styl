@@ -1,5 +1,5 @@
 /**
- * Typo
+ * + Typo
  * =====================================================================
  */
 
@@ -22,8 +22,30 @@ line-height = {
     headline: 1.2
 }
 
+/* = Typo */
+
+
 /**
- * Mediaquery breakpoints
+ * + Images
+ * =====================================================================
+ */
+
+images = {
+    logo: {
+        dataUri: inline-url('logo-electroc.svg'),
+        size: image-size('logo-electroc.svg'),
+        ratio: 0
+    }
+}
+
+for key, image in images
+    image.ratio = remove-unit(image.size[0] / image.size[1])
+
+/* = Images */
+
+
+/**
+ * + Mediaquery breakpoints
  * =====================================================================
  */
 
@@ -54,9 +76,11 @@ breakpoints = {
     }
 }
 
+/* = Mediaquery breakpoints */
+
 
 /**
- * Grid config
+ * + Grid config
  * =====================================================================
  */
 
@@ -71,3 +95,5 @@ grid-config = {
     gutter-width: 20px,
     breakpoints: grid-breakpoints
 }
+
+/* = Grid config */
