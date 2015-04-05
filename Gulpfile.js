@@ -140,7 +140,10 @@ gulp.task('build:js', function() {
         }))
 
         // write processed javascripts
-        .pipe(gulp.dest(path.join(config.paths.assets, 'js')));
+        .pipe(gulp.dest(path.join(config.paths.assets, 'js')))
+
+        // live-reload
+        .pipe(g.connect.reload());;
 
 });
 
@@ -356,7 +359,12 @@ gulp.task('watch', function() {
         var task = config.watchTasks[key];
         gulp.watch(task.glob, _.merge({ cwd: task.cwd }, config.watch), function(event) {
             logWatchInfo(event);
-            gulp.start(task.start);
+            if (_.isArray(task.start)) {
+                runSequence.apply(this|gulp, task.start);
+            }
+            else {
+                gulp.start(task.start);
+            }
         });
     });
 
@@ -369,6 +377,11 @@ gulp.task('watch', function() {
  * + Server Task
  * =====================================================================
  */
+
+gulp.task('livereload', function() {
+    gulp.src(config.paths.web)
+        .pipe(g.connect.reload());
+});
 
 gulp.task('serve', function() {
     g.connect.server({

@@ -211,7 +211,10 @@ module.exports = (function(config) {
                 'templates/**/*'
             ],
             cwd: config.paths.src,
-            start: 'build:site'
+            start: [
+                'build:site',
+                'livereload'
+            ]
         }
     };
 
