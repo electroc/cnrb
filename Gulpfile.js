@@ -211,6 +211,15 @@ gulp.task('build:site', function(done) {
         // enable drafts
         .use(ms.drafts())
 
+        // collections
+        .use(ms.collections({
+            projects: {
+                pattern: 'portfolio/projects/*.md',
+                sortBy: 'year',
+                reverse: true
+            }
+        }))
+
         // render markdown
         .use(ms.branch([
                 '**/*.md'
@@ -236,9 +245,20 @@ gulp.task('build:site', function(done) {
 
         // parse content
         .use(ms.branch([
-                '**/*.html'
+                '**/*.html',
+                '!portfolio/projects/**/*'
             ])
             .use(defaultTemplate('page.jade'))
+            .use(ms.permalinks({
+                relative: false
+            }))
+        )
+
+        // parse content
+        .use(ms.branch([
+                'portfolio/projects/**/*'
+            ])
+            .use(defaultTemplate('project.jade'))
             .use(ms.permalinks({
                 relative: false
             }))

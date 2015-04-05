@@ -23,6 +23,7 @@ src/assets-dev/vendor
 sftp-config.json
 
 # Node, Bower
+node_modules
 node_modules/
 npm-debug.log
 npm-debug.log.*

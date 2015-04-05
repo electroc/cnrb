@@ -1,0 +1,65 @@
+extends base.jade
+
+block content
+    header.site-header.page-section.page-section--header
+
+        h1.site-title #{cnrb.name}
+
+        .logo
+
+        figure.avatar
+            img.avatar__img(src="#{fn.gravatar(600)}" alt="#{cnrb.name}" title="#{cnrb.name}")
+
+        p.msg-welcome.
+            #{msg_welcome}
+
+    section.page-section.page-section--info
+
+        | !{contents}
+
+        h2.headline-2 Projekte
+
+        ul.project-list
+
+            #{projects}
+            each project in projects
+
+                li.project
+                    h3.project__title #{project.title}
+                    p.project__year #{project.year}
+                    p.project__description #{project.description}
+
+                    each link in project.links
+                        ul.project__links
+                            li.project-link
+                                a.project-link__link(href="#{link.url}") #{link.title}
+
+                    each image in project.images
+                        ul.project__images
+                            li.project-image
+                                figure.project-image__figure
+                                    img.project-image__img(src="#{image.src}", alt="#{image.caption}")
+                                    if image.caption
+                                        figcaption.project-image__caption #{image.caption}
+
+        ul.download-list
+            li.download-item
+                a.download-item__link.is-pdf(href="/files/lebenslauf.pdf" title="Lebenslauf von #{cnrb.name}") Lebenlauf
+            li.download-item
+                a.download-item__link.is-pdf(href="/files/referenzen.pdf" title="Referenzen von #{cnrb.name}") Referenzen
+
+    section.page-section.page-section--contact
+
+        address.contact-address
+            | #{cnrb.name}<br>
+            | !{cnrb.address.replace(/[\n\r]+/, '<br>') + '<br>'}
+            | #{cnrb.zip} #{cnrb.city}
+
+        ul.contact-list
+            li.contact-item
+                a.contact-item__link.is-mail(href="mailto:#{cnrb.email}" title="E-Mail an #{cnrb.name}") #{cnrb.email}
+            li.contact-item
+                a.contact-item__link.is-phone(href="tel:#{cnrb.phone}") #{cnrb.phone_formatted}
+
+    footer.site-footer
+        a.link-home(href="#{siteUrl}", rel="bookmark") electroc.de
