@@ -208,7 +208,8 @@ module.exports = (function(config) {
         site: {
             glob: [
                 'site/**/*',
-                'templates/**/*'
+                'templates/**/*',
+                '!site/assets/vendor/**/*'
             ],
             cwd: config.paths.src,
             start: [
