@@ -23,6 +23,7 @@ module.exports = (function(config) {
     config.paths = (function(p) {
         p.root      = cwd;
         p.node      = path.join(p.root, 'node_modules');
+        p.bower     = path.join(p.root, 'bower_components');
         p.src       = path.join(p.root, 'src');
         p.web       = path.join(p.root, 'web');
         p.site      = path.join(p.src,  'site');

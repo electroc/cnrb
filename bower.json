@@ -10,5 +10,7 @@
     "node_modules",
     "bower_components"
   ],
-  "devDependencies": {}
+  "devDependencies": {
+    "textures": "*"
+  }
 }

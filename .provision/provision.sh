@@ -41,7 +41,7 @@ echo "source /home/vagrant/.nvm/nvm.sh && nvm use stable && cd /vagrant" >> ~/.b
 # install global node packages
 echo "Installing global node.js packages... (please be patient)"
 npm install -g npm@latest
-npm install -g gulp
+npm install -g gulp bower
 
 # install project dependencies and build
 cd /vagrant
