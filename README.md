@@ -3,25 +3,36 @@ cnrb
 
 ### Setup
 
+#### Preparation
+Ready to use `git`, `ssh` and `vagrant`.
+
+# Installation & VM Management
+
 ```bash
+# clone project to local folder
 git clone git@github.com:electroc/cnrb.git
-npm install
+# bring up vm
+vagrant up
+# enter vm
+vagrant ssh
+# suspend vm
+vagrant suspend
+# power off vm
+vagrant halt
 ```
 
-### Development
+### Development (within VM)
 
 ```bash
 npm run dev
 ```
 
-Will build the project in development mode and start a local webserver running on [localhost:8080](http://localhost:8080/).
+Will build the project in development mode and start a webserver listening on [localhost:8888](http://localhost:8888/) on your host machine.
 Sources are watched and rebuild on changes.
-Use a (LiveReload Browser Plugin)[http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions]
+Use a [LiveReload Browser Plugin](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions)
 to reload browser on changes.
 
-(Run `npm run dev-production` to work in production mode for testing purposes.)
-
-### Build & Release
+### Build & Release (within VM)
 
 ```bash
 npm run deploy
