@@ -42,8 +42,8 @@ block content
                             each image in project.images
                                 li.project-image
                                     figure.project-image__figure
-                                        a.project-image__link(href="#{image.bigUrl}")
-                                            img.project-image__img(src="#{image.thumbnailUrl}", alt="#{image.caption}")
+                                        a.project-image__link(href="/assets/img/projects/#{image.bigUrl}")
+                                            img.project-image__img(src="/assets/img/projects/#{image.thumbnailUrl}", alt="#{image.caption}")
 
 
             ul.download-list

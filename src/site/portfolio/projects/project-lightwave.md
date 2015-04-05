@@ -12,8 +12,8 @@ links:
 
 images:
     -
-        thumbnailUrl: '//fillmurray.com/150/70'
-        bigUrl: '//fillmurray.com/700/700'
+        thumbnailUrl: 'helix/helix1_tn.jpg'
+        bigUrl: 'helix/helix1.jpg'
     -
         thumbnailUrl: '//placecage.com/150/70'
         bigUrl: '//placecage.com/700/700'
