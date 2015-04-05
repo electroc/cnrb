@@ -4,9 +4,9 @@ DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git colored-man colorize nvm)
+plugins=(colorize nvm)
 export PATH="/usr/local/bin:/usr/bin:/bin"
-source $ZSH/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 export LANG=de_DE.UTF-8
 export EDITOR='nano'
 export ARCHFLAGS="-arch x86_64"
@@ -17,7 +17,7 @@ alias zshconfig="nano ~/.zshrc"
 source ~/.zsh-git-prompt/zshrc.sh
 
 # custom prompt
-PROMPT='%{%F{green}%}%n%{%f%} %B%{%F{magenta}%}%~%{%f%}%b $(git_super_status)
+PROMPT='%{%F{green}%}%n%{%f%} %B%{%F{magenta}%}%~%{%f%}%b
  %B%{%F{cyan}%}➜%{%f%}%b '
 RPROMPT=''
 

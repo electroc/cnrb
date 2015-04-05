@@ -27,13 +27,6 @@ sudo apt-get -y upgrade
 # install basics
 sudo apt-get -y install build-essential libssl-dev git
 
-# setup zsh with oh-my-zsh and zsh-git-prompt
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-git clone git://github.com/olivierverdier/zsh-git-prompt.git ~/.zsh-git-prompt
-sudo apt-get -y install zsh
-sudo chsh -s /bin/zsh vagrant
-cp -R $PROVISION_FILES/vagrant/.zshrc ~/
-
 # install node.js via nvm
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
@@ -43,6 +36,7 @@ source ~/.nvm/nvm.sh
 echo "Installing node.js..."
 nvm install stable &> /dev/null
 nvm use stable
+echo "source /home/vagrant/.nvm/nvm.sh && nvm use stable && cd /vagrant" >> ~/.bashrc
 
 # install global node packages
 echo "Installing global node.js packages... (please be patient)"
