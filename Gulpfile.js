@@ -122,7 +122,13 @@ gulp.task('build:js', function() {
     return gulp
 
         // grab all coffeescript files in coffescript root folder
-        .src(config.paths.assetsDev + '/js/main.js')
+        .src([
+            path.join(config.paths.node, 'd3/d3.js'),
+            path.join(config.paths.bower, 'textures/textures.js'),
+            path.join(config.paths.assetsDev, 'js/main.js')
+        ])
+
+        .pipe(g.concat('main.js'))
 
         // pipe through sourcemaps processor
         .pipe(g.sourcemaps.init())

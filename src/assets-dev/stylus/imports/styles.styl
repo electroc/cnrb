@@ -33,16 +33,18 @@ $img-responsive
     max-width: 100%
     height: auto
 
+html, body
+    height: 100%
+
 html
-    background: #bada55
+    background: green
 
 body
     @extends $text-mono
     improved-text-rendering()
+    position: relative
     padding: (grid-config.gutter-width / 2)
-    max-width: 940px;
-    margin: 0 auto;
-    background: colors.background
+    background: transparent
     line-height: line-height.normal
     color: colors.foreground
     font-size: 14px
@@ -55,6 +57,24 @@ a
 
     &:hover
         text-decoration: underline
+
+.site-header,
+.site-main,
+.site-footer
+    max-width: 940px
+    padding: (grid-config.gutter-width / 2)
+    background: colors.background
+
+.site-footer
+    margin-bottom: (grid-config.gutter-width / 2)
+
+.background-texture
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1;
 
 .row
     @extends $row
@@ -113,8 +133,9 @@ a
 
 $boxed-container
     margin: (grid-config.gutter-width / 2) auto (grid-config.gutter-width / 2) auto
-    width: 80%
-
+    width: 100%
+    +mq-bp(xsl, min)
+        width: 80%
     +mq-bp(md, min)
         width: 66%
 
