@@ -44,7 +44,7 @@ module.exports = (function(config) {
     // personal data
     config.cnrb = {
         name: 'Crishan Böhner',
-        description: 'Schlecht drauf. Mürrisch. Pleite. Drogenabhängig. Aggressiv. Unzuverlässig. Kreativ.',
+        description: 'Crishan malte nur, wenn er musste!',
         email: 'c@electroc.de',
         url: 'http://electroc.de/',
         phone: '+4917631718040',
