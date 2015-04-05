@@ -51,6 +51,9 @@ npm install -g gulp
 
 # install project dependencies and build
 cd /vagrant
+rm -rf node_modules
+mkdir -p ~/node_modules
+ln -s ~/node_modules node_modules
 echo "Installing local node.js packages... (please be patient)"
 npm install
 
