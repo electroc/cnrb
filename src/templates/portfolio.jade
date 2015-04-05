@@ -33,17 +33,19 @@ block content
                         p.project__description #{project.description}
                         .project__contents !{project.contents}
 
-                        ul.project__links
-                            each link in project.links
-                                li.project-link
-                                    a.project-link__link(href="#{link.url}") #{link.title}
+                        if project.links
+                            ul.project__links
+                                each link in project.links
+                                    li.project-link
+                                        a.project-link__link(href="#{link.url}") #{link.title}
 
-                        ul.project__images
-                            each image in project.images
-                                li.project-image
-                                    figure.project-image__figure
-                                        a.project-image__link(href="/assets/img/projects/#{image.bigUrl}")
-                                            img.project-image__img(src="/assets/img/projects/#{image.thumbnailUrl}", alt="#{image.caption}")
+                        if project.images
+                            ul.project__images
+                                each image in project.images
+                                    li.project-image
+                                        figure.project-image__figure
+                                            a.project-image__link(href="/assets/img/projects/#{image.bigUrl}")
+                                                img.project-image__img(src="/assets/img/projects/#{image.thumbnailUrl}", alt="#{image.caption}")
 
 
             ul.download-list
