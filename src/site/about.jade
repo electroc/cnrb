@@ -10,10 +10,33 @@ header.site-header.page-section.page-section--header
         img.avatar__img(src="#{fn.gravatar(600)}" alt="#{cnrb.name}" title="#{cnrb.name}")
 
     p.msg-welcome.
-        Hallo, Willkommen! Schnappsfddfölks f
+        Hallo, Willkommen!
 
 section.page-section.page-section--info
+    h2.headline-2 Projekte
 
+    ul.project-list
+        each project in projects
+            li.project
+                h3.project__title #{project.title}
+                p.project__description #{project.description}
+                each link in links
+                    ul.project__links
+                        li.project__links-item
+                            a(href="#{link.url}") #{link.title}
+                each image in project.images
+                    ul.project__images
+                        li.project__images-item
+                            figure.project__image-image
+                                img.project__image-img(src="#{image.src}", alt="#{image.caption}")
+                                if image.caption
+                                    figcaption.project__image-caption #{image.caption}
+
+    ul.download-list
+        li.download-list__item
+            a.download-list__item-link.is-pdf(href="/files/lebenslauf.pdf" title="Lebenslauf von #{cnrb.name}") Lebenlauf
+        li.download-list__item
+            a.download-list__item-link.is-pdf(href="/files/referenzen.pdf" title="Referenzen von #{cnrb.name}") Referenzen
 
 section.page-section.page-section--contact
 

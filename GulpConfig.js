@@ -58,11 +58,56 @@ module.exports = (function(config) {
         }
     };
 
+    config.projects = [{
+        title: 'project A',
+        description: 'lorem ipsol',
+        links: [
+            {
+                url: '//fillmurray.com/200/300',
+                title: 'link 0'
+            }, {
+                url: '//fillmurray.com/400/300',
+                title: 'link 1'
+            }
+        ],
+        images: [
+            {
+                src: '//fillmurray.com/200/300',
+                caption: 'image 0'
+            }, {
+                src: '//fillmurray.com/400/300',
+                caption: 'image 1'
+            }
+        ]
+    }, {
+        title: 'project B',
+        description: 'dolor sit amet',
+        links: [
+            {
+                url: '//fillmurray.com/200/300',
+                title: 'link 2'
+            }, {
+                url: '//fillmurray.com/400/300',
+                title: 'link 3'
+            }
+        ],
+        images: [
+            {
+                src: '//fillmurray.com/350/375',
+                caption: 'image 2'
+            }, {
+                src: '//fillmurray.com/200/600',
+                caption: 'image 3'
+           }
+        ]
+    }];
+
     // static metadata
     config.metadata = {
         siteTitle:          config.cnrb.name,
         siteUrl:            config.cnrb.url.replace(/^http(s)?\:/i, ''),
         cnrb:               config.cnrb,
+        projects:           config.projects,
         siteDescription:    config.cnrb.description,
         locale:             ['de', 'de_DE'],
         dateFormat:         'Do MMM YYYY',
