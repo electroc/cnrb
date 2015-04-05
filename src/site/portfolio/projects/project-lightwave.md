@@ -15,8 +15,11 @@ images:
         thumbnailUrl: 'helix/helix1_tn.jpg'
         bigUrl: 'helix/helix1.jpg'
     -
-        thumbnailUrl: '//placecage.com/150/70'
-        bigUrl: '//placecage.com/700/700'
+        thumbnailUrl: 'helix/helix2_tn.jpg'
+        bigUrl: 'helix/helix2.jpg'
+    -
+        thumbnailUrl: 'helix/helix3_tn.jpg'
+        bigUrl: 'helix/helix3.jpg'
 ---
 
 Konzeption, Entwicklung, Produktion und Umsetzung des PIXL Helix Kronleuchters
