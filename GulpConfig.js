@@ -189,7 +189,8 @@ module.exports = (function(config) {
         // add imports and vendor folders to @import path
         paths: [
             path.join(config.paths.assetsDev, 'stylus/imports'),
-            path.join(config.paths.assetsDev, 'vendor')
+            path.join(config.paths.assetsDev, 'vendor'),
+            path.join(config.paths.assetsDev, 'img')
         ],
         // function for generating base64 data-uris
         url: {
