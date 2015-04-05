@@ -3,10 +3,14 @@ extends base.jade
 block content
     header.site-header.page-section.page-section--header
 
-        h1.site-title #{cnrb.name}
+        .row
 
-        figure.avatar
-            img.avatar__img(src="#{fn.gravatar(600)}" alt="#{cnrb.name}" title="#{cnrb.name}")
+            h1.site-title
+                span.name #{cnrb.name}
+
+            .site-avatar
+                figure.avatar
+                    img.avatar__img(src="#{fn.gravatar(600)}" alt="#{cnrb.name}" title="#{cnrb.name}")
 
         p.msg-welcome.
             #{msg_welcome}
@@ -17,7 +21,7 @@ block content
 
             | !{contents}
 
-            h2.headline-2 Projekte
+            h2.headline Projekte
 
             ul.project-list
 
@@ -29,13 +33,13 @@ block content
                         p.project__description #{project.description}
                         .project__contents !{project.contents}
 
-                        each link in project.links
-                            ul.project__links
+                        ul.project__links
+                            each link in project.links
                                 li.project-link
                                     a.project-link__link(href="#{link.url}") #{link.title}
 
-                        each image in project.images
-                            ul.project__images
+                        ul.project__images
+                            each image in project.images
                                 li.project-image
                                     figure.project-image__figure
                                         a.project-image__link(href="#{image.bigUrl}")
@@ -62,4 +66,4 @@ block content
                     a.contact-item__link.is-phone(href="tel:#{cnrb.phone}") #{cnrb.phone_formatted}
 
     footer.site-footer
-        a.link-home.logo-text(href="#{siteUrl}", rel="bookmark") electroC
+        a.link-home(href="#{siteUrl}", rel="bookmark") electroC
