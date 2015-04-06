@@ -14,6 +14,9 @@ images:
     -
         thumbnailUrl: 'studio-u/studio-u2_tn.jpg'
         bigUrl: 'studio-u/studio-u2.jpg'
+    -
+        thumbnailUrl: 'studio-u/studio-u3_tn.jpg'
+        bigUrl: 'studio-u/studio-u3.jpg'        
 ---
 
 Seit 2011 Sanierung und Betrieb einer Studio Arbeitsgemeinschaft

@@ -1,7 +1,7 @@
 ---
 title: "Lightlife - Meta-Licht"
 year: "2012"
-description: "ichtinstallation Bergische Universität, Wuppertal"
+description: "Lichtinstallation Bergische Universität, Wuppertal"
 links:
     -
         url: 'http://www.meta-licht.de/impressionen.html'

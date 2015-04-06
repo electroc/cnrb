@@ -64,13 +64,6 @@ block content
                                 h3.project__title #{project.title}
                                 time(datetime="#{project.year}").project__year #{project.year}
                                 p.project__description #{project.description}
-                                .project__contents !{project.contents}
-
-                                if project.links
-                                    ul.project__links
-                                        each link in project.links
-                                            li.project-link
-                                                a.project-link__link(href="#{link.url}") #{link.title}
 
                                 if project.images
                                     ul.project__images
@@ -79,6 +72,14 @@ block content
                                                 figure.project-image__figure
                                                     a.project-image__link(href="/assets/img/projects/#{image.bigUrl}")
                                                         img.project-image__img(src="/assets/img/projects/#{image.thumbnailUrl}", alt="#{image.alt}")
+
+                                .project__contents !{project.contents}
+
+                                if project.links
+                                    ul.project__links
+                                        each link in project.links
+                                            li.project-link
+                                                a.project-link__link(href="#{link.url}") #{link.title}
 
         section#contact.page-section.page-section--contact
 

@@ -5,7 +5,10 @@ description: "Messeauftritt, Light & Building, Frankfurt"
 links:
     -
         url: 'http://pixlsys.com/?page_id=97'
-        title: 'pixlsys'
+        title: 'PIXL'
+    -
+        url: 'http://eundich.de'
+        title: 'E+ICH'
     -
         url: 'http://visiocollect.com/lightbuilding-2010/'
         title: 'visiocollect'
