@@ -36,9 +36,9 @@ $img-responsive
 $page-container
     max-width: 940px
     background: colors.background
-    margin: (grid-config.gutter-width / 2) 0
 
 $content-container
+    border-top: 1px solid #808080
     margin-left: auto
     margin-right: auto
     padding: (grid-config.gutter-width / 2)
@@ -72,7 +72,7 @@ body
     @extends $text-mono
     improved-text-rendering()
     position: relative
-    padding: 0 (grid-config.gutter-width / 2)
+    padding: (grid-config.gutter-width / 2)
     background: transparent
     line-height: line-height.normal
     color: colors.foreground
@@ -196,6 +196,7 @@ a
     @extends $content-container
     font-weight: 700
     text-transform: uppercase
+    border-top-width: 4px
 
     &::before
         content: '#'
@@ -204,8 +205,7 @@ a
 
 // .project-list
 
-.project-list__item
-    border-top: 1px solid #808080
+// .project-list__item
 
 .project
     @extends $content-container
