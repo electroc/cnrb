@@ -5,6 +5,8 @@
 @require 'typo'
 @require 'global'
 
+colors.link = pink
+
 html, body
     width: 100%
     height: 100%
@@ -17,14 +19,14 @@ body
     line-height: line-height-normal
     font-family: font-family.champagne
     font-size: 16px
-    letter-spacing: .05em
+    letter-spacing: .1em
 
 a
     color: colors.white
     text-decoration:none
 
     &:hover
-        color:#fcf
+        color: colors.link
 
 .logo
     padding: (grid-config.gutter-width / 2)
@@ -44,8 +46,26 @@ a
 .question-problem-error
     position: absolute
     top: 150px
+    font-size: 60px
     left: (grid-config.gutter-width / 2)
     transform-origin: 0 0
+    line-height: 1.3
+
+    > h2,
+    > p
+        white-space: nowrap
+        transition: opacity .5s ease
+
+    &:hover > h2,
+    &:hover > p
+        opacity: .23
+
+        &:hover
+            opacity: 1
+
+    a
+        display: inline-block
+        margin-left: .4em
 
 .svglogo
     position: absolute
@@ -54,6 +74,16 @@ a
         height: 100%
         > g > path
             fill: colors.white
+
+.svglogo__link
+    display: block
+    width: 100%
+    height: 100%
+
+    &:hover
+        svg > g > path
+            fill: colors.link
+
 
 .svglogo--studiou
     top: (grid-config.gutter-width / 2)
@@ -90,11 +120,6 @@ a
     +mq-bp(xl)
         height: 100px
         width: (@height * images.logo-pixlsys.ratio)
-
-.svglogo__link
-    display: block
-    width: 100%
-    height: 100%
 
 .nav
     position: absolute

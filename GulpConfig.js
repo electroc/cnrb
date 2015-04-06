@@ -220,6 +220,7 @@ module.exports = (function(config) {
         'important': false,
         'known-properties': false,
         'outline-none': false,
+        'qualified-headings': false,
         'unique-headings': false,
         'universal-selector': false
     };

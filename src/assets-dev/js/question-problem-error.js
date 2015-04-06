@@ -48,7 +48,8 @@
             });
 
             $('.question-problem-error').each(function(i, el) {
-                var $el = $(el);
+                var $el = $(el),
+                    $logo = $('.svglogo--studiou');
                 $window.on({
                     'resize.qpe': function() {
                         var elWidth = $el.width(),
@@ -57,9 +58,10 @@
                             elOffset = $el.offset().left,
                             winWidth = $window.width(),
                             winHeight = $window.height(),
+                            logoHeight = ($logo.height() + ($logo.offset().top * 2)),
                             newElWidth = (winWidth - (elOffset * 2)),
-                            newElHeight = (newElWidth / elRatio),
-                            elScale = (newElWidth / elWidth);
+                            newElHeight = Math.min((winHeight - (2 * logoHeight)), (newElWidth / elRatio)),
+                            elScale = (newElHeight / elHeight);
                         $el.css({
                             transform: 'scale(' + elScale + ')',
                             top: ((winHeight - newElHeight) / 2)
