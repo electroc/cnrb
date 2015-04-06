@@ -1,17 +1,19 @@
 ---
 template: question-problem-error.jade
-siteDescription: 'question problem error emergency'
+siteDescription: 'question problem error electroC'
 ---
 
 header
     h1.logo
+        | electro<span id="flicker">C</span>
 
 section
     h2 QUESTION PROBLEM ERROR
     p MAIL <a href="mailto:#{cnrb.email}?subject=question problem error")>#{cnrb.email}</a>
     p CALL <a href="tel:#{cnrb.phone}">#{cnrb.phone}</a>
 
-footer
-    p <a href="/portfolio">portfolio</a>
+if environment=='development'
+    footer
+        p <a href="/portfolio">portfolio</a>
 
 

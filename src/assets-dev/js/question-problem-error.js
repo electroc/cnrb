@@ -39,7 +39,7 @@
             }
         }).trigger('resize.electroC');
 
-        $('h1').on({
+        $('#flicker').on({
             startAni: function(ev,a){
                 $(this).animate({
                     opacity: a ? .9 : .2
@@ -48,7 +48,7 @@
                     easing: 'easeInOutBounce',
                     queue: true,
                     complete: function(val) {
-                        $('h1').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
+                        $('#flicker').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
                     }
                 })
             }
