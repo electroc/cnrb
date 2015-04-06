@@ -5,7 +5,10 @@ description: "Sonderausstellung, Frankfurt Oder"
 links:
     -
         url: 'http://www.panatom.com/showcase.html?cat=3'
-        title: 'Kleist'
+        title: 'Kleist Museum'
+    -
+        url: 'http://www.thegreeneyl.com/work'
+        title: 'the green eyl'        
 images:
     -
         thumbnailUrl: 'kleist/kleist1_tn.jpg'
