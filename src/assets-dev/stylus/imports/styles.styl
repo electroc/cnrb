@@ -33,17 +33,42 @@ $img-responsive
     max-width: 100%
     height: auto
 
+$page-container
+    max-width: 940px
+    background: colors.background
+    margin: (grid-config.gutter-width / 2) 0
+
+$content-container
+    margin-left: auto
+    margin-right: auto
+    padding: (grid-config.gutter-width / 2)
+    width: 100%
+    +mq-bp(xsl, min)
+        padding: grid-config.gutter-width
+        width: 82%
+
+$btn
+    display: inline-block
+    border: 1px solid alpha(colors.link, .15)
+    padding: .6em .8em
+    border-radius: 2px
+
+$btn__icon
+    @extends $icon
+    margin-right: .4em
+
+
 html, body
     height: 100%
 
 html
-    background: green
+    background: colors.background
 
 body
     @extends $text-mono
     improved-text-rendering()
     position: relative
-    padding: (grid-config.gutter-width / 2)
+    padding: 0 (grid-config.gutter-width / 2)
     background: transparent
     line-height: line-height.normal
     color: colors.foreground
@@ -55,18 +80,10 @@ a
     text-decoration: none
     color: colors.link
 
-    &:hover
-        text-decoration: underline
-
 .site-header,
-.site-main,
+.page-section,
 .site-footer
-    max-width: 940px
-    padding: (grid-config.gutter-width / 2)
-    background: colors.background
-
-.site-footer
-    margin-bottom: (grid-config.gutter-width / 2)
+    @extends $page-container
 
 .background-texture
     position: fixed
@@ -76,7 +93,7 @@ a
     height: 100%
     z-index: -1;
 
-.row
+.header-row
     @extends $row
     +mq-bp(xsl, min)
         display: flex
@@ -96,7 +113,6 @@ a
     font-size: 16px
     text-align: center
     margin: 1em auto 1.5em
-
     +mq-bp(xsl)
         font-size: (16px / 3 * 3.5)
     +mq-bp(sm)
@@ -131,19 +147,50 @@ a
 .avatar__img
     @extends $img-responsive
 
-$boxed-container
-    margin: (grid-config.gutter-width / 2) auto (grid-config.gutter-width / 2) auto
-    width: 100%
-    +mq-bp(xsl, min)
-        width: 80%
-    +mq-bp(md, min)
-        width: 66%
-
 .msg-welcome
-    @extends $boxed-container
+    @extends $content-container
+
+.info-list
+    @extends $content-container
+    padding-top: 0
+    +mq-bp(xsl, min)
+        padding-top: 0
+
+.info-list__container
+    @extends $row
+
+.info-item
+    @extends $col-xs-24, $col-xsl-12, $col-sm-8, $col-md-6
+    text-align: center
+    padding-top: (grid-config.gutter-width / 2)
+    +mq-bp(xsl, min)
+        padding-top: grid-config.gutter-width
+
+.info-item__link
+    @extends $btn
+    display: block
+
+    &:hover
+        border-color: colors.link
+
+    &::before
+        @extends $btn__icon
+
+    &.is-cv::before
+        @extends $icon-github
+
+    &.is-projects::before
+        @extends $icon-github
+
+    &.is-linkedin::before
+        @extends $icon-github
+
+    &.is-xing::before
+        @extends $icon-github
+
 
 .headline
-    @extends $boxed-container
+    @extends $content-container
     font-weight: 700
     text-transform: uppercase
 
@@ -154,29 +201,28 @@ $boxed-container
 
 // .project-list
 
+.project-list__item
+    border-top: 1px solid #808080
+
 .project
-    @extends $boxed-container
-    border: 1px solid #808080
-    padding: grid-config.gutter-width
-
-    + .project
-        margin: 30px auto 0 auto
+    @extends $content-container
 
 
-$content-spacing
-    margin-bottom: .23em
+// .project__title
 
-.project__title
-
-// .project__images
+.project__images
+    +mq-bp(xsl, min)
+        display: flex
+        justify-content: space-between
 
 .project-image
-    @extends $content-spacing
+    display: block
+    margin-top: (grid-config.gutter-width / 2)
 
 // .project-image__figure
 
 .project-image__link
-    display: inline-block
+    display: block
 
 .project-image__img
     @extends $img-responsive
@@ -187,17 +233,31 @@ $content-spacing
 
 // .project-link__link
 
-// .contact-address
+.contact-container
+    @extends $content-container
 
-// .contact-items
+.contact-row
+    @extends $row
 
-// .contact-item
+.contact-address,
+.contact-items
+    @extends $col-xs-24, $col-xsl-12
 
-// .contact-item__link
+.contact-item
+    + .contact-item
+        margin-top: grid-config.gutter-width
 
-//     &.is-mail
+.contact-item__link
+    @extends $btn
 
-//     &.is_phone
+    &::before
+        @extends $icon
+
+    &.is-mail::before
+        @extends $icon-github
+
+    &.is-phone::before
+        @extends $icon-github
 
 .link-home
     @extends $logo-text
