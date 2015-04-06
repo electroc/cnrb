@@ -25,22 +25,50 @@
         }
     });
 
-    $document.ready(function(){
+    $document.on({
 
-        $('#text-flicker').on({
-            startAni: function(ev,a){
-                $(this).animate({
-                    opacity: a ? .9 : .2
-                },{
-                    duration: a ? 400 : 1000,
-                    easing: 'easeInOutBounce',
-                    queue: true,
-                    complete: function(val) {
-                        $('#text-flicker').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
+        ready: function() {
+
+            $('#text-flicker').each(function(i, el) {
+                var $el = $(el);
+                $el.on({
+                    startAni: function(ev,a){
+                        $(this).animate({
+                            opacity: a ? .9 : .2
+                        },{
+                            duration: a ? 400 : 1000,
+                            easing: 'easeInOutBounce',
+                            queue: true,
+                            complete: function(val) {
+                                $('#text-flicker').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
+                            }
+                        })
                     }
-                })
-            }
-        }).css('opacity',0).trigger('startAni',[true]);
+                }).css('opacity',0).trigger('startAni',[true]);
+            });
+
+            $('.question-problem-error').each(function(i, el) {
+                var $el = $(el);
+                $window.on({
+                    'resize.qpe': function() {
+                        var elWidth = $el.width(),
+                            elHeight = $el.height(),
+                            elRatio = elWidth / elHeight,
+                            elOffset = $el.offset().left,
+                            winWidth = $window.width(),
+                            winHeight = $window.height(),
+                            newElWidth = (winWidth - (elOffset * 2)),
+                            newElHeight = (newElWidth / elRatio),
+                            elScale = (newElWidth / elWidth);
+                        $el.css({
+                            transform: 'scale(' + elScale + ')',
+                            top: ((winHeight - newElHeight) / 2)
+                        });
+                    }
+                }).trigger('resize.qpe')
+            });
+
+        }
 
     });
 

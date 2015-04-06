@@ -5,12 +5,19 @@
 @require 'typo'
 @require 'global'
 
+html, body
+    width: 100%
+    height: 100%
+
 body
+    improved-text-rendering()
+    position: relative
     background: colors.black
     color: colors.white
+    line-height: line-height-normal
     font-family: font-family.champagne
     font-size: 16px
-    line-height: line-height-normal
+    letter-spacing: .05em
 
 a
     color: colors.white
@@ -20,27 +27,103 @@ a
         color:#fcf
 
 .logo
+    padding: (grid-config.gutter-width / 2)
+    min-height: 120px
+    font-size: 2.5em
+    +mq-bp(xsl)
+        font-size: 3em
+    +mq-bp(sm)
+        font-size: 3.5em
+    +mq-bp(md)
+        font-size: 4em
+    +mq-bp(lg)
+        font-size: 5em
+    +mq-bp(xl)
+        font-size: 6em
+
+.question-problem-error
+    position: absolute
+    top: 150px
+    left: (grid-config.gutter-width / 2)
+    transform-origin: 0 0
+
+.svglogo
+    position: absolute
     svg
         width: 100%
         height: 100%
-        g path
+        > g > path
             fill: colors.white
 
-.logo--studiou
-    width: 100px
+.svglogo--studiou
+    top: (grid-config.gutter-width / 2)
+    right: @top
+    width: 80px
     height: (@width / images.logo-studiou.ratio)
+    +mq-bp(sm)
+        width: 90px
+        height: (@width / images.logo-studiou.ratio)
+    +mq-bp(md)
+        width: 100px
+        height: (@width / images.logo-studiou.ratio)
+    +mq-bp(lg)
+        width: 110px
+        height: (@width / images.logo-studiou.ratio)
+    +mq-bp(xl)
+        width: 120px
+        height: (@width / images.logo-studiou.ratio)
 
-.logo--pixlsys
-    height: 100px
+.svglogo--pixlsys
+    bottom: (grid-config.gutter-width / 2)
+    right: @bottom
+    height: 60px
     width: (@height * images.logo-pixlsys.ratio)
+    +mq-bp(sm)
+        height: 70px
+        width: (@height * images.logo-pixlsys.ratio)
+    +mq-bp(md)
+        height: 80px
+        width: (@height * images.logo-pixlsys.ratio)
+    +mq-bp(lg)
+        height: 90px
+        width: (@height * images.logo-pixlsys.ratio)
+    +mq-bp(xl)
+        height: 100px
+        width: (@height * images.logo-pixlsys.ratio)
 
-.logo__link
+.svglogo__link
     display: block
     width: 100%
     height: 100%
 
+.nav
+    position: absolute
+    bottom: (grid-config.gutter-width / 2)
+    left: @bottom
 
+.nav-items
+    font-size: 1.25em
+    +mq-bp(sm)
+        font-size: 1.5em
+    +mq-bp(md)
+        font-size: 2em
+    +mq-bp(lg)
+        font-size: 2.25em
+    +mq-bp(xl)
+        font-size: 2.5em
 
+.nav-item
+    + .nav-item
+        margin-top: .5em
+    +mq-bp(xsl, min)
+        display: inline-block
+        + .nav-item
+            margin-top: 0
+            margin-left: 1em
+
+.nav-item__link
+
+// .nav-item__label
 
 #text-flicker
     font-size:1.1em

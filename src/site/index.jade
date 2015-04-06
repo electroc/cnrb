@@ -3,31 +3,28 @@ template: question-problem-error.jade
 siteDescription: 'question problem error electroC'
 ---
 
-header
-    .site-title
-        h1 electro<span id="text-flicker">C</span>
-    .logo.logo--studiou
-        a.logo__link(href="http://studio-u.berlin/", target="_blank", title="Studio U Berlin")
-            include ../assets-dev/img/logo-studiou.svg
+header.logo
+    h1 electro<span id="text-flicker">C</span>
 
-main
-    section.textsize-fluid
-        h2 Question Problem Error
-        p Mail
-            a(href="mailto:#{cnrb.email}?subject=question problem error") #{cnrb.email}
-        p Call
-            a(href="tel:#{cnrb.phone}") #{cnrb.phone}
+main.question-problem-error
+    h2 Question Problem Error
+    p Mail
+        a(href="mailto:#{cnrb.email}?subject=question problem error") #{cnrb.email}
+    p Call
+        a(href="tel:#{cnrb.phone}") #{cnrb.phone}
 
-footer
+if environment=='development'
 
-    if environment=='development'
-
-        ul.nav.nav--main
+    nav.nav.nav--main
+        ul.nav-items
             include ../templates/partials/nav-list.jade
 
+.svglogo.svglogo--studiou
+    a.svglogo__link(href="http://studio-u.berlin/", target="_blank", title="Studio U Berlin")
+        include ../assets-dev/img/logo-studiou.svg
 
-    .logo.logo--pixlsys
-        a.logo__link(href="http://pixlsys.com/", target="_blank", title="PIXLSYS")
-            include ../assets-dev/img/logo-pixlsys.svg
+.svglogo.svglogo--pixlsys
+    a.svglogo__link(href="http://pixlsys.com/", target="_blank", title="PIXLSYS")
+        include ../assets-dev/img/logo-pixlsys.svg
 
 
