@@ -27,19 +27,7 @@
 
     $document.ready(function(){
 
-        $window.on({
-            'resize.electroC': function(){
-                var window_height = $(window).height(),
-                    window_width = $(window).width(),
-                    textbox_ratio = 2,
-                    textbox_lines = 4.5,
-                    textbox_lineheight = 1.4,
-                    size = window_width/window_height>textbox_ratio ? window_height : window_width/textbox_ratio;
-                $('body').css('font-size',size/textbox_lines/textbox_lineheight);
-            }
-        }).trigger('resize.electroC');
-
-        $('#flicker').on({
+        $('#text-flicker').on({
             startAni: function(ev,a){
                 $(this).animate({
                     opacity: a ? .9 : .2
@@ -48,29 +36,12 @@
                     easing: 'easeInOutBounce',
                     queue: true,
                     complete: function(val) {
-                        $('#flicker').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
+                        $('#text-flicker').delay( a ? 2000 : 400 ).trigger( 'startAni', [ a ? false : true ] );
                     }
                 })
             }
         }).css('opacity',0).trigger('startAni',[true]);
 
-        var aniOptions = {
-                duration: 800,
-                easing: 'swing',
-                queue: false
-            };
-
-        $('p').hover(
-            function(){
-                $('h2,p').not(this).animate({
-                    opacity: .2
-                }, aniOptions);
-            },
-            function(){
-                $('h2,p').animate({
-                    opacity: 1
-            }, aniOptions);
-        });
     });
 
 })(jQuery, window, document);

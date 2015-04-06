@@ -4,18 +4,30 @@ siteDescription: 'question problem error electroC'
 ---
 
 header
-    h1.logo
-        | electro<span id="flicker">C</span>
-        | <a href="http://studio-u.berlin"><img src="assets/img/studio-u-logo-white.png"></a>
+    .logo--electroc
+        h1 electro<span id="text-flicker">C</span>
+    .logo--studiou
+        a(href="http://studio-u.berlin/", target="_blank", title="Studio U Berlin")
+            img(src="/assets/img/studio-u-logo-white.png", alt="Studio U Berlin")
 
-section
-    h2 QUESTION PROBLEM ERROR
-    p MAIL <a href="mailto:#{cnrb.email}?subject=question problem error")>#{cnrb.email}</a>
-    p CALL <a href="tel:#{cnrb.phone}">#{cnrb.phone}</a>
+main
+    section.textsize-fluid
+        h2 Question Problem Error
+        p Mail
+            a(href="mailto:#{cnrb.email}?subject=question problem error") #{cnrb.email}
+        p Call
+            a(href="tel:#{cnrb.phone}") #{cnrb.phone}
 
-if environment=='development'
-    footer
-        p <a href="/portfolio">portfolio</a>
-            | <a href="http://pixlsys.com"><img src="assets/img/pixl_logo_white.png"></a>
+footer
+
+    if environment=='development'
+
+        ul.nav.nav--main
+            include ../templates/partials/nav-list.jade
+
+
+    .logo--pixlsys
+        a(href="http://pixlsys.com/", target="_blank", title="PIXLSYS")
+            img(src="/assets/img/pixl_logo_white.png", alt="PIXLSYS")
 
 

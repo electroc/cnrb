@@ -1,56 +1,23 @@
-@import 'variables'
+@require 'variables'
 
-html, body, h1, h2
-    margin:0
-    padding:0
+@require 'collection/main'
+
+@require 'typo'
+@require 'global'
 
 body
-    background:#111
-    color:#f0f0f0
-    font-family: ChampagneLimousines, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
-    font-size:12px
-    line-height:1em
-    overflow:hidden
+    background: colors.black
+    color: colors.white
+    font-family: font-family.champagne
+    font-size: 16px
+    line-height: line-height-normal
 
-a,
-a:link,
-a:hover,
-a:visited,
-a:active
-    color:#f0f0f0
+a
+    color: colors.white
     text-decoration:none
 
-a:hover
-    color:#fcf
+    &:hover
+        color:#fcf
 
-header
-    box-sizing: border-box
-    height:1.5em
-    min-height:26px
-    padding: .3em 0 0 .3em
-
-footer
-    box-sizing: border-box
-    height:1.5em
-    min-height:26px
-    padding: .3em 0 0 .3em
-    font-size:0.5em
-
-.logo, h2, p
-    margin:0 0 0 .3em
-    padding:0
-    white-space:nowrap
-    font-size:1em
-    font-weight:normal
-
-.logo
-    font-family: font-family.champagne
-    margin: 0
-    font-size:66px
-    line-height:1
-    letter-spacing:.02em
-
-
-#flicker
+#text-flicker
     font-size:1.1em
-
