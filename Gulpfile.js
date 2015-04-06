@@ -220,7 +220,7 @@ gulp.task('build:site', function(done) {
         // collections
         .use(ms.collections({
             projects: {
-                pattern: 'portfolio/projects/*.md',
+                pattern: 'referenzen/projekte/*.md',
                 sortBy: 'year',
                 reverse: true
             }
@@ -252,7 +252,7 @@ gulp.task('build:site', function(done) {
         // parse content
         .use(ms.branch([
                 '**/*.html',
-                '!portfolio/projects/**/*'
+                '!referenzen/projekte/**/*'
             ])
             .use(defaultTemplate('page.jade'))
             .use(ms.permalinks({
@@ -262,9 +262,9 @@ gulp.task('build:site', function(done) {
 
         // parse content
         .use(ms.branch([
-                'portfolio/projects/**/*'
+                'referenzen/projekte/**/*'
             ])
-            .use(defaultTemplate('project.jade'))
+            .use(defaultTemplate('projekt.jade'))
             .use(ms.permalinks({
                 relative: false
             }))

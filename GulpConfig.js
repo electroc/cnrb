@@ -84,16 +84,16 @@ module.exports = (function(config) {
 
     config.nav = {
         portfolio: {
-            label: 'Portfolio',
-            path: '/portfolio/'
+            label: 'Referenzen',
+            path: '/referenzen/'
         },
         about: {
-            label: 'About',
-            path: '/about/'
+            label: 'Über',
+            path: '/ueber/'
         },
         contact: {
             label: 'Kontakt',
-            path: '/contact/'
+            path: '/kontakt/'
         }
     };
 
