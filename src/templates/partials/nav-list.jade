@@ -1,0 +1,4 @@
+each navItem, navItemId in nav
+    li.nav-item(class="nav-item--#{navItemId}")
+        a.nav-item__link(href="#{navItem.path}", title="#{navItem.title?navItem.title:''}")
+            span.nav-item__label #{navItem.label}

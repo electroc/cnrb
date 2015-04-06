@@ -82,11 +82,27 @@ module.exports = (function(config) {
         }
     };
 
+    config.nav = {
+        portfolio: {
+            label: 'Portfolio',
+            path: '/portfolio/'
+        },
+        about: {
+            label: 'About',
+            path: '/about/'
+        },
+        contact: {
+            label: 'Kontakt',
+            path: '/contact/'
+        }
+    };
+
     // static metadata
     config.metadata = {
         siteTitle:          config.cnrb.name,
         siteUrl:            config.cnrb.url.replace(/^http(s)?\:/i, ''),
         cnrb:               config.cnrb,
+        nav:                config.nav,
         siteDescription:    config.cnrb.description,
         locale:             ['de', 'de_DE'],
         dateFormat:         'Do MMM YYYY',
