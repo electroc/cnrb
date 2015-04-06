@@ -43,8 +43,9 @@ $content-container
     margin-right: auto
     padding: (grid-config.gutter-width / 2)
     width: 100%
-    +mq-bp(xsl, min)
+    +mq-bp(sm, min)
         padding: grid-config.gutter-width
+    +mq-bp(md, min)
         width: 82%
 
 $btn
@@ -55,7 +56,7 @@ $btn
 
 $btn__icon
     @extends $icon
-    margin-right: .4em
+    margin-right: .6em
 
 
 html, body
@@ -150,21 +151,24 @@ a
 .msg-welcome
     @extends $content-container
 
-.info-list
+.info-items
     @extends $content-container
-    padding-top: 0
-    +mq-bp(xsl, min)
-        padding-top: 0
 
-.info-list__container
+.info-items__container
     @extends $row
+    margin-top: -(grid-config.gutter-width / 2)
+    +mq-bp(xsl)
+        margin-left: 0
+        margin-right: 0
+        margin-bottom: (grid-config.gutter-width / 2)
 
 .info-item
-    @extends $col-xs-24, $col-xsl-12, $col-sm-8, $col-md-6
+    @extends $col-xs-24, $col-xsl-12, $col-md-6
     text-align: center
-    padding-top: (grid-config.gutter-width / 2)
-    +mq-bp(xsl, min)
-        padding-top: grid-config.gutter-width
+    margin-top: (grid-config.gutter-width / 2)
+    +mq-bp(xsl)
+        margin-top: grid-config.gutter-width
+
 
 .info-item__link
     @extends $btn
@@ -177,16 +181,16 @@ a
         @extends $btn__icon
 
     &.is-cv::before
-        @extends $icon-github
+        @extends $icon-child
 
     &.is-projects::before
-        @extends $icon-github
+        @extends $icon-sliders
 
     &.is-linkedin::before
-        @extends $icon-github
+        @extends $icon-linkedin
 
     &.is-xing::before
-        @extends $icon-github
+        @extends $icon-xing
 
 
 .headline
@@ -244,20 +248,28 @@ a
     @extends $col-xs-24, $col-xsl-12
 
 .contact-item
+    +mq-bp(xs)
+        margin-top: (grid-config.gutter-width / 2)
     + .contact-item
-        margin-top: grid-config.gutter-width
+        margin-top: (grid-config.gutter-width / 2)
+        +mq-bp(sm, min)
+            margin-top: grid-config.gutter-width
 
 .contact-item__link
     @extends $btn
+    width: 100%
 
     &::before
-        @extends $icon
+        @extends $btn__icon
 
     &.is-mail::before
-        @extends $icon-github
+        @extends $icon-envelope
 
     &.is-phone::before
-        @extends $icon-github
+        @extends $icon-microphone
+
+.footer-container
+    @extends $content-container
 
 .link-home
     @extends $logo-text

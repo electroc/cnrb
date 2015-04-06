@@ -20,8 +20,8 @@ block content
 
         section.page-section.page-section--info
 
-            .info-list
-                ul.info-list__container
+            .info-items
+                ul.info-items__container
                     li.info-item
                         a.info-item__link.is-cv(href="/files/lebenslauf.pdf" title="Lebenslauf von #{cnrb.name}")
                             span.info-item__label Lebenslauf
@@ -85,6 +85,9 @@ block content
                             a.contact-item__link.is-phone(href="tel:#{cnrb.phone}") #{cnrb.phone_formatted}
 
     footer.site-footer
-        a.link-home(href="#{siteUrl}", rel="bookmark") electroC
+
+        .footer-container
+
+            a.link-home(href="#{siteUrl}", rel="bookmark") electroC
 
     .background-texture
