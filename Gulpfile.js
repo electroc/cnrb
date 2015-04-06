@@ -421,6 +421,29 @@ gulp.task('serve', function() {
 
 
 /**
+ * + SVG Cleanup Task
+ * =====================================================================
+ */
+gulp.task('svgmin', function() {
+    return gulp
+        .src(config.paths.assetsDev + '/img/raw/*.svg')
+        .pipe(g.svgmin({
+            js2svg: {
+                pretty: true
+            },
+            plugins: [{
+                cleanupIDs: false
+            }, {
+                mergePaths: false
+            }, {
+                removeTitle: true
+            }]
+        }))
+        .pipe(gulp.dest(config.paths.assetsDev + '/img'));
+});
+/* = SVG Cleanup Task */
+
+/**
  * + Deploy and Sync Tasks
  * =====================================================================
  */
