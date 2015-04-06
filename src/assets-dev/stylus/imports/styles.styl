@@ -7,6 +7,11 @@ $text-mono
 $text-champagne
     font-family: font-family.champagne
 
+$font-style__headline
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: .05em
+
 $logo-text
     @extends $text-champagne
     font-weight: normal
@@ -38,28 +43,29 @@ $page-container
     background: colors.background
 
 $content-container
-    border-top: 1px solid #808080
     margin-left: auto
     margin-right: auto
     padding: (grid-config.gutter-width / 2)
     width: 100%
+    max-width: 800px
     +mq-bp(sm, min)
         padding: grid-config.gutter-width
-    +mq-bp(md, min)
-        width: 82%
 
 $btn
+    @extends $font-style__headline
+    font-weight: normal
     display: inline-block
     border: 1px solid alpha(colors.link, .15)
     padding: .6em .8em
     border-radius: 2px
     text-align: center
+    cursor: pointer
     &:hover
         border-color: colors.link
 
 $btn__icon
     @extends $icon
-    margin-right: .6em
+    margin-right: .5em
 
 
 html, body
@@ -88,6 +94,9 @@ a
 .page-section,
 .site-footer
     @extends $page-container
+
+.page-section__content
+    @extends $content-container
 
 .background-texture
     position: fixed
@@ -138,21 +147,12 @@ a
     height: auto
     margin: 0 auto 30px auto
     width: 100%
-    max-width: 180px
-    +mq-bp(xsl)
-        max-width: 210px
+    max-width: 80%
     +mq-bp(xsl, min)
         margin-top: 30px
-    +mq-bp(sm)
-        max-width: 240px
-    +mq-bp(md, min)
-        max-width: 300px
 
 .avatar__img
     @extends $img-responsive
-
-.msg-welcome
-    @extends $content-container
 
 .info-items
     @extends $content-container
@@ -191,27 +191,51 @@ a
     &.is-xing::before
         @extends $icon-xing
 
+.headline-container
+    border-top: 3px double #808080
 
 .headline
-    @extends $content-container
-    font-weight: 700
-    text-transform: uppercase
-    border-top-width: 4px
+    @extends $content-container, $font-style__headline
 
     &::before
         content: '#'
         display: inline-block
         margin-right: .45em
 
+    #referenzen&::before
+        @extends $icon, $icon-sliders
+
+    #kontakt&::before
+        @extends $icon, $icon-child
+
+
 // .project-list
 
-// .project-list__item
+.project-list__item
+    border-top: 1px solid #ddd
 
 .project
     @extends $content-container
+    position: relative
 
+.project__year
+    @extends $font-style__headline
+    position: absolute
+    top: (grid-config.gutter-width / 2)
+    left: (grid-config.gutter-width / 2)
+    +mq-bp(sm, min)
+        top: grid-config.gutter-width
+        left: grid-config.gutter-width
 
-// .project__title
+.project__title
+    @extends $font-style__headline
+    margin-bottom: .23em
+    margin-left: 3.5em
+    &::before
+        content: '#'
+        color: #808080
+        display: inline-block
+        margin-right: .45em
 
 .project__images
     +mq-bp(xsl, min)
@@ -221,8 +245,6 @@ a
 .project-image
     display: block
     margin-top: (grid-config.gutter-width / 2)
-
-// .project-image__figure
 
 .project-image__link
     display: block
@@ -273,6 +295,7 @@ a
 
 .footer-container
     @extends $content-container
+    text-align: center
 
 .link-home
     @extends $logo-text

@@ -16,7 +16,10 @@ block content
 
         section.page-section.page-section--welcome
 
-            p.msg-welcome #{msg_welcome}
+            .page-section__content
+                p.msg-welcome #{msg_welcome}
+                | !{contents}
+
 
         section.page-section.page-section--info
 
@@ -38,9 +41,8 @@ block content
 
         section.page-section.page-section--projects
 
-            | !{contents}
-
-            h2.headline Projekte
+            .headline-container
+                h2#referenzen.headline referenzen
 
             ul.project-list
 
@@ -69,14 +71,15 @@ block content
 
         section.page-section.page-section--contact
 
-            h2.headline Kontakt
+            .headline-container
+                h2#kontakt.headline Kontakt
 
             .contact-container
 
                 .contact-row
 
                     address.contact-address
-                        | #{cnrb.name}<br>
+                        | <strong>#{cnrb.name}</strong><br>
                         | !{cnrb.address.replace(/[\n\r]+/, '<br>') + '<br>'}
                         | #{cnrb.zip} #{cnrb.city}
 
