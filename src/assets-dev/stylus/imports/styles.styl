@@ -53,6 +53,9 @@ $btn
     border: 1px solid alpha(colors.link, .15)
     padding: .6em .8em
     border-radius: 2px
+    text-align: center
+    &:hover
+        border-color: colors.link
 
 $btn__icon
     @extends $icon
@@ -164,7 +167,6 @@ a
 
 .info-item
     @extends $col-xs-24, $col-xsl-12, $col-md-6
-    text-align: center
     margin-top: (grid-config.gutter-width / 2)
     +mq-bp(xsl)
         margin-top: grid-config.gutter-width
@@ -173,9 +175,6 @@ a
 .info-item__link
     @extends $btn
     display: block
-
-    &:hover
-        border-color: colors.link
 
     &::before
         @extends $btn__icon
@@ -257,7 +256,11 @@ a
 
 .contact-item__link
     @extends $btn
+    display: block
+    margin: 0 auto
     width: 100%
+    +mq-bp(sm, min)
+        max-width: 75%
 
     &::before
         @extends $btn__icon
