@@ -24,7 +24,7 @@
   "devDependencies": {
     "auto-plug": "^1.0.1",
     "autoprefixer-core": "^5.1.8",
-    "collection.stylus": "^0.3.1",
+    "collection.stylus": "^0.5.0",
     "css-mqpacker": "^3.1.0",
     "csswring": "^3.0.3",
     "d3": "^3.5.5",

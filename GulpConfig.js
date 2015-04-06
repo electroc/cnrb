@@ -252,7 +252,7 @@ module.exports = (function(config) {
     config.copyTasks = {
         collection: {
             src: '**/*',
-            cwd: 'collection.stylus/src/stylus/imports',
+            cwd: 'collection.stylus/src/stylus',
             baseCwd: config.paths.node,
             intoDev: true
         },

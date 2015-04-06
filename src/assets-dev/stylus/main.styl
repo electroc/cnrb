@@ -1,16 +1,7 @@
-@import 'variables'
+@require 'variables'
 
-use('collection/plugins/to-string.js')
+@require 'collection/main'
 
-@import 'collection/functions/*'
-@import 'collection/mixins/*'
+@require 'icons'
 
-@import 'collection/modules/mediaquery-placeholders'
-
-create-grid(grid-config);
-
-@import 'collection/modules/reset-and-normalize'
-@import 'collection/modules/responsive-helpers'
-
-@import 'icons'
-@import 'styles'
+@require 'styles'
