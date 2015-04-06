@@ -329,7 +329,13 @@ a
 
 // .project__links
 
-// .project-link
+.project-link
+    display:inline
+    + .project-link
+        &::before
+            content:"|"
+            display:inline-block
+            margin:0 .45em
 
 // .project-link__link
 

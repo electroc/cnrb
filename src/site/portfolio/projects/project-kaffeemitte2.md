@@ -5,7 +5,7 @@ description: "Monbijouplatz, Berlin"
 links:
     -
         url: 'http://pixlsys.com/?page_id=97'
-        title: 'PIXLsys'
+        title: 'PIXL'
     -
         url: 'http://balestraberlin.com/?p=2401'
         title: 'Balestra Berlin'        

@@ -5,7 +5,7 @@ description: "Supermodulares Lichtsystem"
 links:
     -
         url: 'http://pixlsys.com/'
-        title: 'PIXLSYS'
+        title: 'PIXL'
     -
         url: 'http://eundich.de/'
         title: 'E+ICH'
