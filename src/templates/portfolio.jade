@@ -62,7 +62,7 @@ block content
                             .project.page-section__content
 
                                 h3.project__title #{project.title}
-                                p.project__year #{project.year}
+                                time(datetime="#{project.year}").project__year #{project.year}
                                 p.project__description #{project.description}
                                 .project__contents !{project.contents}
 
