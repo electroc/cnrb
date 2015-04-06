@@ -169,11 +169,15 @@ module.exports = (function(config) {
     // csslint options
     // https://github.com/CSSLint/csslint/wiki/Rules-by-ID
     config.csslint = {
+        'adjoining-classes': false,
+        'box-model': false,
         'box-sizing': false,
         'bulletproof-font-face': false,
         'compatible-vendor-prefixes': false,
+        'fallback-colors': false,
         'font-faces': false,
         'font-sizes': false,
+        'ids': false,
         'important': false,
         'known-properties': false,
         'outline-none': false,
