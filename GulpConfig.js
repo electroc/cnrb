@@ -61,12 +61,12 @@ module.exports = (function(config) {
 
     config.cnrb.profiles = {
         cv_pdf: {
-            label: 'linkedin',
+            label: 'Lebenslauf',
             title: 'Lebenslauf von ' + config.cnrb.name,
             url: '/files/lebenslauf.pdf'
         },
         projects_pdf: {
-            label: 'linkedin',
+            label: 'Referenzen',
             title: 'Referenzen von ' + config.cnrb.name,
             url: '/files/referenzen.pdf'
         },
@@ -97,7 +97,7 @@ module.exports = (function(config) {
     // metadata changes depending on environment
     config.metadata.environments = {
         development: {
-            siteUrl:        '//localhost:8080/',
+            siteUrl:        '//localhost:8888/',
         }
     };
 
