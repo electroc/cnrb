@@ -59,6 +59,29 @@ module.exports = (function(config) {
         }
     };
 
+    config.cnrb.profiles = {
+        cv_pdf: {
+            label: 'linkedin',
+            title: 'Lebenslauf von ' + config.cnrb.name,
+            url: '/files/lebenslauf.pdf'
+        },
+        projects_pdf: {
+            label: 'linkedin',
+            title: 'Referenzen von ' + config.cnrb.name,
+            url: '/files/referenzen.pdf'
+        },
+        linkedin: {
+            label: 'linkedin',
+            title: config.cnrb.name + ' @ linkedin',
+            url: '//de.linkedin.com/in/crishan/'
+        },
+        xing: {
+            label: 'Xing',
+            title: config.cnrb.name + ' @ Xing',
+            url: '//www.xing.com/profile/Crishan_Boehner'
+        }
+    };
+
     // static metadata
     config.metadata = {
         siteTitle:          config.cnrb.name,

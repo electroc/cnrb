@@ -1,3 +1,8 @@
+/**
+ * + Typo
+ * =====================================================================
+ */
+
 $text-sans
     font-family: font-family.sans-serif
 
@@ -11,6 +16,14 @@ $font-style__headline
     font-weight: 700
     text-transform: uppercase
     letter-spacing: .05em
+
+/* = Typo */
+
+
+/**
+ * + Logo
+ * =====================================================================
+ */
 
 $logo-text
     @extends $text-champagne
@@ -33,23 +46,26 @@ $logo-img
         background: images.logo.dataUri center center no-repeat;
         background-size: cover
 
+/* = Logo */
+
+
+/**
+ * + Basic extendables
+ * =====================================================================
+ */
+
 $img-responsive
     display: block
     max-width: 100%
     height: auto
 
-$page-container
-    max-width: 940px
-    background: colors.background
+/* = Basic extendables */
 
-$content-container
-    margin-left: auto
-    margin-right: auto
-    padding: (grid-config.gutter-width / 2)
-    width: 100%
-    max-width: 800px
-    +mq-bp(sm, min)
-        padding: grid-config.gutter-width
+
+/**
+ * + Buttons
+ * =====================================================================
+ */
 
 $btn
     @extends $font-style__headline
@@ -67,6 +83,24 @@ $btn__icon
     @extends $icon
     margin-right: .5em
 
+/* = Buttons */
+
+
+/**
+ * + Grid containers
+ * =====================================================================
+ */
+
+.row
+    @extends $row
+
+/* = Grid containers */
+
+
+/**
+ * + Basic HTML Elements
+ * =====================================================================
+ */
 
 html, body
     height: 100%
@@ -86,18 +120,6 @@ body
     +mq-bp(md, min)
         font-size: 16px
 
-a
-    text-decoration: none
-    color: colors.link
-
-.site-header,
-.page-section,
-.site-footer
-    @extends $page-container
-
-.page-section__content
-    @extends $content-container
-
 .background-texture
     position: fixed
     top: 0
@@ -106,8 +128,67 @@ a
     height: 100%
     z-index: -1;
 
-.header-row
-    @extends $row
+a
+    text-decoration: none
+    color: colors.link
+
+/* = Basic HTML Elements */
+
+
+/**
+ * + Page Section
+ * =====================================================================
+ */
+
+// .page-section
+
+.page-section__container
+    max-width: 940px
+    background: colors.background
+
+.page-section__content
+    margin-left: auto
+    margin-right: auto
+    padding: (grid-config.gutter-width / 2)
+    width: 100%
+    max-width: 800px
+    +mq-bp(sm, min)
+        padding: grid-config.gutter-width
+
+/* = Page Section */
+
+
+/**
+ * + Headlines
+ * =====================================================================
+ */
+
+.headline-container
+    border-top: 3px double #808080
+
+.headline
+    @extends $font-style__headline
+
+    &::before
+        content: '#'
+        display: inline-block
+        margin-right: .45em
+
+    &--projects::before
+        @extends $icon, $icon-sliders
+
+    &--contact::before
+        @extends $icon, $icon-child
+
+/* = Headlines */
+
+
+/**
+ * + Header
+ * =====================================================================
+ */
+
+.page-section--header > .page-section__container > .row
     +mq-bp(xsl, min)
         display: flex
         align-items: stretch
@@ -154,10 +235,15 @@ a
 .avatar__img
     @extends $img-responsive
 
-.info-items
-    @extends $content-container
+/* = Header */
 
-.info-items__container
+
+/**
+ * + Profile Buttons
+ * =====================================================================
+ */
+
+.profile-items
     @extends $row
     margin-top: -(grid-config.gutter-width / 2)
     +mq-bp(xsl)
@@ -165,57 +251,46 @@ a
         margin-right: 0
         margin-bottom: (grid-config.gutter-width / 2)
 
-.info-item
+.profile-item
     @extends $col-xs-24, $col-xsl-12, $col-md-6
     margin-top: (grid-config.gutter-width / 2)
     +mq-bp(xsl)
         margin-top: grid-config.gutter-width
 
 
-.info-item__link
+.profile-item__link
     @extends $btn
     display: block
 
     &::before
         @extends $btn__icon
 
-    &.is-cv::before
+    &--cv_pdf::before
         @extends $icon-child
 
-    &.is-projects::before
+    &--projects_pdf::before
         @extends $icon-sliders
 
-    &.is-linkedin::before
+    &--linkedin::before
         @extends $icon-linkedin
 
-    &.is-xing::before
+    &--xing::before
         @extends $icon-xing
 
-.headline-container
-    border-top: 3px double #808080
-
-.headline
-    @extends $content-container, $font-style__headline
-
-    &::before
-        content: '#'
-        display: inline-block
-        margin-right: .45em
-
-    #referenzen&::before
-        @extends $icon, $icon-sliders
-
-    #kontakt&::before
-        @extends $icon, $icon-child
+/* = Profile Buttons */
 
 
-// .project-list
+/**
+ * + Projects
+ * =====================================================================
+ */
 
-.project-list__item
+// .project-items
+
+.project-item
     border-top: 1px solid #ddd
 
 .project
-    @extends $content-container
     position: relative
 
 .project__year
@@ -252,17 +327,19 @@ a
 .project-image__img
     @extends $img-responsive
 
-// .project-links
+// .project__links
 
 // .project-link
 
 // .project-link__link
 
-.contact-container
-    @extends $content-container
+/* = Projects */
 
-.contact-row
-    @extends $row
+
+/**
+ * + Contact
+ * =====================================================================
+ */
 
 .contact-address,
 .contact-items
@@ -287,16 +364,26 @@ a
     &::before
         @extends $btn__icon
 
-    &.is-mail::before
+    &--email::before
         @extends $icon-envelope
 
-    &.is-phone::before
+    &--phone::before
         @extends $icon-microphone
 
-.footer-container
-    @extends $content-container
+/* = Contact */
+
+
+/**
+ * + Footer
+ * =====================================================================
+ */
+
+.page-section--footer .page-section__content
     text-align: center
 
 .link-home
     @extends $logo-text
     font-size: 24px
+
+/* = Footer */
+
