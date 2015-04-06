@@ -1,0 +1,39 @@
+/**
+ * + Buttons
+ * =====================================================================
+ */
+
+$btn
+    font-weight: normal
+    display: inline-block
+    border: 1px solid alpha(colors.link, 0)
+    padding: .6em .8em
+    border-radius: 2px
+    text-align: center
+    cursor: pointer
+    transition: all .25s ease
+
+    &:hover
+        border-color: colors.link
+
+    &:focus
+        outline: none
+
+    &:focus,
+    &:active
+        background: alpha(colors.link, 10%)
+        border-color: alpha(colors.link, 0%)
+        color: colors.link
+
+$btn__icon
+    @extends $icon
+    margin-right: .5em
+
+button,
+input[type=submit],
+input[type=button],
+input[type=reset],
+.btn
+    @extends $btn
+
+/* = Buttons */

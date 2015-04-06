@@ -1,0 +1,27 @@
+/**
+ * + Logo
+ * =====================================================================
+ */
+
+$logo-text
+    @extends $text-champagne
+    font-weight: normal
+
+$logo-text--pseudo
+    @extends $logo-text
+    content: 'electroC'
+    display: inline
+
+$logo-img
+    width: 100%
+    max-width: unit(images.logo.size[0], 'px');
+
+    &::before
+        display: block;
+        content: '';
+        width: 100%;
+        padding-bottom: (100% / images.logo.ratio);
+        background: images.logo.dataUri center center no-repeat;
+        background-size: cover
+
+/* = Logo */
