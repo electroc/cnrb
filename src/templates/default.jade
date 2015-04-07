@@ -1,0 +1,28 @@
+extends base.jade
+
+block content
+
+    header.page-section
+
+        .page-section__container
+
+            .page-section__content
+
+                a.site-logo(href="/", title="electroC", rel="bookmark")
+                    h1 electroC
+
+
+    main.site-main
+
+        block contents
+            | !{contents}
+
+    footer.page-section
+
+        .page-section__container
+
+            .page-section__content
+
+                p Lorem ipsum dolor
+
+    .background-texture

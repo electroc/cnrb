@@ -1,20 +1,54 @@
 ---
-siteDescription: 'about electroC'
+template: default.jade
+siteDescription: 'Über Crishan Böhner'
 ---
 
-header
-    h1.logo
+section.page-section
 
-section
-    p electroC produziert und entwicklt sinnvolle und hilfreiche elektronische Geräte und Systeme.
-        | Spezialisiert auf Prototypenbau und Kleinserien im Licht-Sektor.
-        | Zu finden seit 2011 in der Werkstatt im Studio-U in Berlin.
-    p freunde und partner von electroC
+    .page-section__container
 
-    a(href="http://simbo.ninja" target="_blank" title="Simon Lepel")
-    a(href="http://eundich.de" target="_blank" title="E+ICH")
-    a(href="http://benroth.info" target="_blank" title="Ben Roth")
-    a(href="http://markushoffmann.cc" target="_blank" title="Markus Hoffmann")
-    a(href="https://vimeo.com/user7661433" target="_blank" title="Cornelius Diemer")
+        .row.flex-row
 
-    p hier gibts ein random bilder array
+            h1.cnrb-title
+                span.name #{cnrb.name}
+
+            .cnrb-avatar
+                figure.avatar
+                    img.avatar__img(src="#{fn.gravatar(600)}", alt="#{cnrb.name}", title="#{cnrb.name}")
+
+
+        .page-section__content
+
+            ul.profile-items
+
+                each profile, profile_id in cnrb.profiles
+                    li.profile-item
+                        a.profile-item__link(class="profile-item__link--#{profile_id}", href="#{profile.url}", title="#{profile.title}")
+                            span.profile-item__label #{profile.label}
+
+section.page-section
+
+    .page-section__container
+
+        .page-section__content
+
+            p.
+                Crishan Böhner produziert und entwickelt sinnvolle und hilfreiche elektronische Geräte und Systeme.
+                Spezialisiert auf Prototypenbau und Kleinserien im Licht-Sektor.
+                Zu finden seit 2011 in der Werkstatt im Studio-U in Berlin.
+
+            p hier gibts ein random bilder array
+
+            h3 Freunde und Partner von electroC
+
+            ul.friends-and-partners
+                li
+                    a(href="http://simbo.ninja" target="_blank" title="Simon Lepel") Simon Lepel
+                li
+                    a(href="http://eundich.de" target="_blank" title="E+ICH") E+ICH
+                li
+                    a(href="http://benroth.info" target="_blank" title="Ben Roth") Ben Roth
+                li
+                    a(href="http://markushoffmann.cc" target="_blank" title="Markus Hoffmann") Markus Hoffmann
+                li
+                    a(href="https://vimeo.com/user7661433" target="_blank" title="Cornelius Diemer") Cornelius Diemer

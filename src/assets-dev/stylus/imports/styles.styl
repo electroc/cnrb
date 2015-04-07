@@ -33,6 +33,10 @@ a
     text-decoration: none
     color: colors.link
 
+.site-logo
+    @extends $logo-text
+    font-size: 28px
+
 /* = Basic HTML Elements */
 
 
@@ -89,13 +93,13 @@ a
  * =====================================================================
  */
 
-.page-section--header > .page-section__container > .row
+.flex-row
     +mq-bp(xsl, min)
         display: flex
         align-items: stretch
 
-.site-title,
-.site-avatar
+.cnrb-title,
+.cnrb-avatar
     @extends $col-xs-24, $col-xsl-12
     +mq-bp(xsl, min)
         display: flex
@@ -103,7 +107,7 @@ a
         flex-direction: column
 
 
-.site-title
+.cnrb-title
     @extends $text-mono
     font-size: 16px
     text-align: center
@@ -114,13 +118,6 @@ a
         font-size: (16px / 3 * 4)
     +mq-bp(md, min)
         font-size: (16px / 3 * 5)
-
-    &::before
-        @extends $logo-text--pseudo
-        line-height: 1
-        font-size: 3em;
-        display: block
-        margin: 0 auto .2em auto
 
 
 .avatar

@@ -1,4 +1,42 @@
 ---
-template: referenzen.jade
-msg_welcome: "Eine Auswahl an Referenzen von electroC"
+template: default.jade
 ---
+
+section.page-section
+
+    .page-section__container.headline-container
+
+        .page-section__content
+
+            h2.headline.headline Referenzen
+
+            p Eine Auswahl an Projekten von Crishan Böhner
+
+section.page-section
+
+    ul.project-items
+
+        each project in projects
+
+            li.project-item.page-section__container
+
+                .project.page-section__content
+
+                    h3.project__title #{project.title}
+                    time(datetime="#{project.year}").project__year #{project.year}
+                    p.project__description #{project.description}
+                    if project.links
+                        ul.project__links
+                            each link in project.links
+                                li.project-link
+                                    a.project-link__link(href="#{link.url}") #{link.title}
+
+                    if project.images
+                        ul.project__images
+                            each image in project.images
+                                li.project-image
+                                    figure.project-image__figure
+                                        a.project-image__link(href="/assets/img/projekte/#{image.bigUrl}")
+                                            img.project-image__img(src="/assets/img/projekte/#{image.thumbnailUrl}", alt="#{image.alt}")
+
+                    .project__contents !{project.contents}
