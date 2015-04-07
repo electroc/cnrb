@@ -23,6 +23,9 @@ images:
     -
         thumbnailUrl: 'helix/helix3_tn.jpg'
         bigUrl: 'helix/helix3.jpg'
+    -
+        thumbnailUrl: 'helix/helix4_tn.jpg'
+        bigUrl: 'helix/helix4.jpg'        
 ---
 
 Konzeption, Entwicklung, Produktion und Umsetzung des PIXL Helix Kronleuchters
