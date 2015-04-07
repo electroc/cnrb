@@ -206,8 +206,8 @@ gulp.task('build:site', function(done) {
     }
 
     // go metalsmith!
-    var metalsmith = new Metalsmith(config.paths.root)
-
+    var metalsmith = new Metalsmith(config.paths.root);
+    metalsmith
         // set basic options
         .source(config.paths.site)
         .destination(config.paths.web)
@@ -242,7 +242,7 @@ gulp.task('build:site', function(done) {
                 '**/*.jade'
             ])
             .use(ms.jade(_.merge({
-                locals: _.merge(config.metadata, jadeLocals)
+                locals: _.merge(metalsmith.metadata(), config.metadata, jadeLocals)
             }, jadeOptions)))
         )
 
@@ -442,6 +442,7 @@ gulp.task('svgmin', function() {
         .pipe(gulp.dest(config.paths.assetsDev + '/img'));
 });
 /* = SVG Cleanup Task */
+
 
 /**
  * + Deploy and Sync Tasks
