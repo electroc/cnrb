@@ -1,22 +1,30 @@
 ToDo - Website
 ==============
 
-- Projekte
+### Projekte
 
-    - Alle großen Versionen der Bilder auf dieselben Maximalgrößen bringen  
-        (ca. 1200 x 900)
+Für alle Projekte gilt: mehr Infos! Mindestens ein Satz zur allgemeinen Projektbeschreibung.
+Aus der Überschrift und den teils dürftigen Bildern sind weder der Sinn und Zweck des Projekts
+noch die übernommenen Aufgaben zu erkennen.
 
-    - Projektbeschreibung aufteilen in je ein Satz zu
-        1. allgemeine Beschreibung des Projekts (Worum geht es?)
-        2. Welche Aufgaben wurden übernommen?
+- Alle großen Versionen der Bilder auf dieselben Maximalgrößen bringen  
+    (ca. 1200 x 900)
 
-        z.B. "Kaffeemitte 2"
-        - statt:
+- Projektbeschreibung aufteilen in je ein Satz zu
+    1. allgemeine Beschreibung des Projekts (Worum geht es?)
+    2. Welche Aufgaben wurden übernommen?
 
-            Projektplanung, Entwicklung, Produktion und Umsetzung eines Audio- und Beleuchtungskonzeptes
+    z.B. "Kaffeemitte 2"
+    - statt:
 
-        - besser:
+        Projektplanung, Entwicklung, Produktion und Umsetzung eines Audio- und Beleuchtungskonzeptes
 
-            Dynamisches Audio- und Beleuchtungskonzept für "Kaffeemitte 2" mit speziell entwickelten, auf Schienen fahrbaren Leuchtobjekten
+    - besser:
 
-            Planung, Entwicklung, Produktion, Umsetzung und Installation
+        Dynamisches Audio- und Beleuchtungskonzept für "Kaffeemitte 2" mit speziell entwickelten, auf Schienen fahrbaren Leuchtobjekten
+
+        Planung, Entwicklung, Produktion, Umsetzung und Installation
+
+- mehr Fotos; aktuellere Fotos; Fotos vom fertigen Projekt statt Fotos der Baustelle  
+    Gilt besonders für: StudioU, Encounter, Videre-Lux, Kleist Museum
+
